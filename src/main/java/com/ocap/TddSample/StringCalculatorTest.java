@@ -43,4 +43,8 @@ public class StringCalculatorTest {
 		Assert.assertEquals(12, StringCalculator.add("1n2,3,6"));
 	}
 	
+	@Test
+	public final void differentDelimitersToSeperateNumbers() {
+		Assert.assertEquals(12, StringCalculator.add("//;n3;6;3"));
+	}
 }
