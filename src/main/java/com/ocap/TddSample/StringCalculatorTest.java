@@ -6,10 +6,6 @@ import com.ocap.TddSample.StringCalculator;
 
 public class StringCalculatorTest {
 	
-	@Test(expected = RuntimeException.class)
-	public final void moreThanTwoNumberThrowException() {
-		StringCalculator.add("1,2,3");
-	}
 	
 	@Test
 	public final void twoNumbersNoException() {
@@ -35,6 +31,11 @@ public class StringCalculatorTest {
 	@Test
 	public final void twoNumbersReturnSum() {
 		Assert.assertEquals(10,StringCalculator.add("5,5"));
+	}
+	
+	@Test
+	public final void anyNumbersReturnSum() {
+		Assert.assertEquals(12, StringCalculator.add("1,2,3,6"));;
 	}
 	
 }

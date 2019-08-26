@@ -7,13 +7,9 @@ public class StringCalculator {
 		int returnValue = 0; 
 		
 		String[] numberArray = numbers.split(",");
-		if(numberArray.length >2) {
-			throw new RuntimeException("upto 2 numbers seperated by , are only allowed");
-		}else {
-			for (String number : numberArray) {
-				if(!number.trim().isEmpty()){
-					returnValue+= Integer.parseInt(number);
-				}
+		for (String number : numberArray) {
+			if(!number.trim().isEmpty()){
+				returnValue+= Integer.parseInt(number);
 			}
 		}
 		return returnValue;
