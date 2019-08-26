@@ -35,7 +35,12 @@ public class StringCalculatorTest {
 	
 	@Test
 	public final void anyNumbersReturnSum() {
-		Assert.assertEquals(12, StringCalculator.add("1,2,3,6"));;
+		Assert.assertEquals(12, StringCalculator.add("1,2,3,6"));
+	}
+	
+	@Test
+	public final void newLineBtwnNumbersReturnSum() {
+		Assert.assertEquals(12, StringCalculator.add("1n2,3,6"));
 	}
 	
 }
