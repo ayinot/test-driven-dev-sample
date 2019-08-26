@@ -47,4 +47,21 @@ public class StringCalculatorTest {
 	public final void differentDelimitersToSeperateNumbers() {
 		Assert.assertEquals(12, StringCalculator.add("//;n3;6;3"));
 	}
+	
+	@Test(expected  = RuntimeException.class)
+	public final void whenNegativeNumberThrowException() {
+		StringCalculator.add("-4,5,6,7");
+	}
+	
+	@Test
+	public final void whenNegativeNumbersThrowMultipleException() {
+		RuntimeException exception = null;
+		try {
+			StringCalculator.add("-4,-5,6,7");
+		}catch(RuntimeException ex) {
+			exception = ex;
+		}
+		Assert.assertNotNull(exception);
+		Assert.assertEquals("Negative numbers are not allowed[-4, -5]", exception.getMessage());
+	}
 }
